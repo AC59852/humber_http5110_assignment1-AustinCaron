@@ -1,0 +1,534 @@
+/* Start of CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* End of CSS Reset */
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+#main {
+    padding-bottom: 60px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.header, .footer {
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: rgba(17, 17, 17, 0);
+}
+
+.header__nav {
+    width: 100%;
+    /* add a drop shadow */
+}
+
+.nav {
+    height: 100%;
+}
+
+.header__navlist {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nav__list {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav__item {
+    margin: 0 20px 0 0;
+}
+
+.nav__item a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.02em;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.footer__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.footer__item {
+    margin: 0 10px 0 0;
+}
+
+.footer__item a{
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+.nav--home {
+    background: transparent;
+}
+
+.nav--home nav {
+    /* remove shadow */
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+/* Start of home */
+
+.home {
+    padding-bottom: 0 !important;
+    height: 100vh;
+    width: 100%;
+    /* background image with linear gradient */
+    /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../images/whispy-smoke.jpg") no-repeat left top; */
+    background-size: cover;
+    background-position: center;
+}
+
+.home__title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 10em;
+    font-family: sans-serif;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.home__videoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.home__overlay {
+    position: inherit;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .home__overlay {
+        backdrop-filter: blur(10px);
+    }
+}
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .home__video {
+        filter: blur(10px) brightness(0.6);
+        transform: scale(1.05);
+    }
+}
+
+.home__video {
+    object-fit: cover;
+}
+
+/* End of home */
+
+
+/* Start of links */
+
+.links {
+    width: 100%;
+    padding-top: 100px;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.links__glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px) brightness(0.7);
+    background-image: url('../images/pink_abstract.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+.links__container {
+    width: 55%;
+    margin: 0 auto 50px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: rgba(17, 17, 17, 0.5) 0 5px 15px 5px;
+    border-radius: 5px;
+    height: 650px;
+    backdrop-filter: blur(10px);
+}
+
+.links__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.links__heading {
+    color: white;
+    font-size: 2em;
+    font-size: bold;
+    text-align: center;
+    position: relative;
+    font-family: sans-serif;
+}
+
+.links__heading::after {
+    content: "";
+    position: absolute;
+    top: 165%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: white;
+}
+
+.links__list {
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 10%;
+}
+
+.links__icon {
+    color: #b4b4b4;
+    font-size: 70px;
+    margin: 25px;
+    width: 1.125em !important;
+    transition: all 0.3s ease-in-out;
+}
+
+.links__icon:hover {
+    color: white;
+}
+
+/* End of links */
+
+
+/* Start of Portfolio */
+.projects {
+    padding: 0 !important;
+}
+
+.footer--portfolio {
+    display: none;
+}
+
+.projects__container {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.projects__item {
+    width: 100%;
+    height: 100%;
+    flex: 1 0 auto;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.projects__image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9999;
+    filter: blur(8px) brightness(0.55);
+    transform: scale(1.05);
+}
+
+.projects__title {
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin: 45px 40px;
+    font-size: 7em;
+}
+
+.projects__dots {
+    position: fixed;
+    top: 20%;
+    left: 2%;
+    width: 35px;
+    z-index: 9999;
+}
+
+.projects__dot {
+    display: block;
+    width: 8px;
+    height: 8px;
+    border: solid 1.5px white;
+    border-radius: 50%;
+    background: transparent;
+    margin: 11px 0;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+}
+
+.projects__dot--active {
+    background: white !important;
+}
+
+/* end of projects */
+
+
+/* start of about */
+.about {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding-top: 4%;
+}
+
+.about__glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px) brightness(0.7);
+    background-image: url('../images/whispy-smoke.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+.about__wrapper {
+    width: 70%;
+    margin: 0 auto;
+    backdrop-filter: blur(25px);
+    background: rgba(0, 0, 0, 0.411);
+    box-shadow: rgb(17 17 17 / 50%) 0 5px 15px 5px;
+    border-radius: 5px;
+    padding: 2% 0;
+}
+
+.about__heading {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #f5f5f5;
+}
+
+.about__info {
+    width: 60%;
+    margin: 5% auto;
+}
+
+.about__info p {
+    font-size: 1.1em;
+    font-family: sans-serif;
+    color: #f5f5f5;
+    margin: 3% 0;
+    line-height: 140%;
+}
+
+/* end of about section */
+
+
+/* start of contact section */
+.contact {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 0 !important;
+}
+
+.contact__glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px) brightness(0.7);
+    background-image: url('../images/light_glass.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+.contact__form {
+    width: 30%;
+}
+
+.contact__inputWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 5% 0;
+}
+
+.contact__label {
+    display: none;
+}
+
+.contact__input, .contact__textarea, .contact__submit {
+    backdrop-filter: blur(25px);
+    background: rgba(0, 0, 0, 0.411);
+    box-shadow: rgb(17 17 17 / 50%) 0 5px 15px 1px;
+    border: none;
+    padding: 3.5%;
+    color: white;
+    font-size: 1.2em;
+    border-radius: 10px;
+    font-family: sans-serif;
+}
+
+.contact__input::placeholder, .contact__textarea::placeholder {
+    color: white;
+    font-size: 1em;
+}
+
+.contact__textarea {
+    height: 250px;
+}
+
+.contact__submit {
+    width: 25%;
+}
+
+/* end of contact section */
+
+
+/* start of copyright, privacy and terms of use */
+.privacy, .terms, .copyright {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.privacy__glass, .terms__glass, .copyright__glass {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(10px) brightness(0.7);
+    background-image: url('../images/blue_building.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+    transform: scale(1.1);
+}
+
+.privacy__container, .terms__container, .copyright__container {
+    width: 60%;
+    margin: 0 auto;
+    color: white;
+    font-family: sans-serif;
+    backdrop-filter: blur(25px);
+    background: rgba(0, 0, 0, 0.411);
+    box-shadow: rgb(17 17 17 / 50%) 0 5px 15px 1px;
+    padding: 3% 0;
+}
+
+.privacy__wrapper, .terms__wrapper, .copyright__wrapper {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.privacy__heading, .terms__heading, .copyright__heading {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.privacy__para, .terms__para, .copyright__para {
+    margin: 2% 0;
+    line-height: 140%;
+}
