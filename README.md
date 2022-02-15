@@ -15,4 +15,4 @@ Using my previous knowledge of CSS and JavaScript, I decided to go further and c
 1. [Unsplash](https://unsplash.com/)
 
 ## license
-This project is licensed under the [MIT license](LICENSE).
+This project is licensed under the [MIT license](https://opensource.org/licenses/MIT).
